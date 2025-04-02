@@ -10,6 +10,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import { Toaster } from "@/components/ui/sonner"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -43,9 +44,10 @@ export default function RootLayout({
                   <ThemeToggle />
                 </div>
               </header>
-              {children}
+              <div className="mx-auto mt-8 max-w-2xl">{children}</div>
             </SidebarInset>
           </SidebarProvider>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

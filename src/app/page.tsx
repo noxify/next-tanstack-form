@@ -1,9 +1,14 @@
-import { ClientComp } from "./client-form"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function Home() {
   return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
-      <ClientComp />
-    </div>
+    <Card>
+      <CardHeader>
+        <CardTitle>TanStack/form shadcn example</CardTitle>
+      </CardHeader>
+      <CardContent>
+        Choose a component from the sidebar to continue...
+      </CardContent>
+    </Card>
   )
 }
