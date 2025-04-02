@@ -5,6 +5,8 @@ export const ageServerFieldValidation = async ({
 }: {
   value: number
 }) => {
+  await new Promise((resolve) => setTimeout(resolve, 1000))
+
   console.log("[age]: server field validation log entry")
   if (value < 12) {
     return "Server field validation: You must be at least 12 to sign up"
@@ -18,6 +20,8 @@ export const firstNameServerFieldValidation = async ({
 }: {
   value: string
 }) => {
+  await new Promise((resolve) => setTimeout(resolve, 1000))
+
   console.log("[firstName]. server field validation log entry")
   if (value === "hello") {
     return "Server field validation: hello is not allowed"

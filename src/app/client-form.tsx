@@ -49,13 +49,6 @@ export const ClientComp = () => {
 
   const formErrors = useStore(form.store, (formState) => formState.errors)
 
-  console.dir({
-    formState: form.state,
-    formStore: form.store,
-    formErrors,
-    fieldErrors: form.getAllErrors(),
-  })
-
   return (
     <form
       onSubmit={(e) => {
@@ -83,7 +76,8 @@ export const ClientComp = () => {
                 min={0}
                 name={field.name}
                 type="number"
-                value={field.state.value ?? 0}
+                value={field.state.value}
+                onBlur={field.handleBlur}
                 onChange={(e) => {
                   console.log("onChange", e.target.valueAsNumber)
                   field.handleChange(
